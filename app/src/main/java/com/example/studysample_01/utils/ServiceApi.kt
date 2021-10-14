@@ -5,7 +5,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface ServiceApi {
-
+    // parameter update
     @GET(API.SEARCH_BOOK)
     suspend fun getSearchBook(
         @Query("query") query: String
