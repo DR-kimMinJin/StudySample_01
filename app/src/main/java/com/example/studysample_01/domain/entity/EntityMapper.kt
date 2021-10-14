@@ -1,6 +1,7 @@
-package com.example.studysample_01.domain
+package com.example.studysample_01.domain.entity
 
 import com.example.studysample_01.data.Model
+import com.example.studysample_01.domain.Entity
 
 abstract class EntityMapper<E: Entity, M: Model> {
 

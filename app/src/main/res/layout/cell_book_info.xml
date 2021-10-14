@@ -7,9 +7,9 @@
 
         <variable
             name="model"
-            type="com.example.studysample_01.data.model.BookInfoModel" />
+            type="com.example.studysample_01.view.model.BookInfo" />
 
-        <import type="com.example.studysample_01.utils.ExtensionsKt" />
+        <import type="com.example.studysample_01.utils.Extensions" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -44,7 +44,7 @@
                 android:ellipsize="end"
                 android:gravity="center"
                 android:maxLines="2"
-                android:text="@{ExtensionsKt.htmlToString(model.title)}"
+                android:text="@{Extensions.htmlToSting(model.title)}"
                 android:textColor="@color/theme_sub_color"
                 android:textSize="20dp"
                 tools:text="제목" />
@@ -57,7 +57,7 @@
                 android:ellipsize="end"
                 android:gravity="center"
                 android:maxLines="1"
-                android:text="@{ExtensionsKt.htmlToString(model.author)}"
+                android:text="@{Extensions.htmlToSting(model.author)}"
                 android:textColor="@color/theme_sub_color"
                 android:textSize="16dp"
                 tools:text="작가" />

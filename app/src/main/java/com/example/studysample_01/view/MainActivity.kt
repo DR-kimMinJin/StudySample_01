@@ -29,9 +29,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun initObserve() {
         mainViewModel.openEvent.eventObserve(this) { keyword ->
-            val intent = Intent(this, DetailActivity::class.java)
-            intent.putExtra(DetailActivity.BOOK_SEARCH_KEYWORD, keyword)
-            startActivity(intent)
+            Intent(this, DetailActivity::class.java)
+                .apply {
+                    putExtra(DetailActivity.BOOK_SEARCH_KEYWORD, keyword)
+                }
+                .let {
+                    startActivity(it)
+                }
         }
     }
 }

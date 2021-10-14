@@ -1,14 +1,15 @@
 package com.example.studysample_01.view
 
 import androidx.lifecycle.*
-import com.example.studysample_01.domain.BookSearchUseCase
+import com.example.studysample_01.domain.BookKeywordSendRepository
+import com.example.studysample_01.domain.BookKeywordSendUseCase
 import com.example.studysample_01.utils.Event
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val bookSearchUseCase: BookSearchUseCase
+    private val bookKeywordSendUseCase: BookKeywordSendUseCase
 ) : ViewModel() {
 
     private val _openEvent = MutableLiveData<Event<String>>()
@@ -16,7 +17,7 @@ class MainViewModel @Inject constructor(
 
     fun bookSearch(keyword: String) {
         _openEvent.value = Event(
-            bookSearchUseCase.setSearchKeywordSend(keyword)
+            bookKeywordSendUseCase.bookKeywordSend(keyword)
         )
     }
 }

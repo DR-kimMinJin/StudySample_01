@@ -56,6 +56,8 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     // 라이프사이클
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    // 코루틴
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2'
     // 로깅 인터셉터
     implementation 'com.squareup.okhttp3:logging-interceptor:4.8.1'
     // 레트로핏

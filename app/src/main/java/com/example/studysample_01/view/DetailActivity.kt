@@ -2,10 +2,12 @@ package com.example.studysample_01.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.example.studysample_01.R
 import com.example.studysample_01.adapter.BookAdapter
+import com.example.studysample_01.adapter.BookListAdapter
 import com.example.studysample_01.databinding.ActivityDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -31,8 +33,7 @@ class DetailActivity : AppCompatActivity() {
 
     private fun initView() {
         detailViewModel.documentData.observe(this) {
-            binding.recyclerviewList.adapter = BookAdapter(it)
+            binding.recyclerviewList.adapter = BookListAdapter(it)
         }
     }
-
 }

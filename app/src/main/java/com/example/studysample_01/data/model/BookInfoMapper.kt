@@ -1,7 +1,7 @@
 package com.example.studysample_01.data.model
 
-import com.example.studysample_01.domain.BookInfoEntity
-import com.example.studysample_01.domain.EntityMapper
+import com.example.studysample_01.domain.entity.BookInfoEntity
+import com.example.studysample_01.domain.entity.EntityMapper
 
 object BookInfoMapper : EntityMapper<BookInfoEntity, BookInfoModel>()  {
 

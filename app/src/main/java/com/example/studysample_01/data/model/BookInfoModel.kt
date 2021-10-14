@@ -1,18 +1,17 @@
 package com.example.studysample_01.data.model
 
 import com.example.studysample_01.data.Model
-
-data class SearchBookModel(
-    var total_count: Int = 0,
-    var pageable_count: Int = 0,
-    var is_end: Boolean = false,
-    var items: List<BookInfoModel>? = null
-) : Model()
+import com.google.gson.annotations.SerializedName
 
 data class BookInfoModel(
-    var author: String? = null,         // 저자
-    var description: String? = null,    // 책 설명
-    var title: String? = null,          // 제목
-    var image: String? = null,          // 이미지
-    var price: String? = null           // 가격
+    @SerializedName("author")
+    val author: String?,         // 저자
+    @SerializedName("description")
+    val description: String?,    // 책 설명
+    @SerializedName("title")
+    val title: String,          // 제목
+    @SerializedName("image")
+    val image: String,          // 이미지
+    @SerializedName("price")
+    val price: String?           // 가격
 ) : Model()

@@ -1,18 +1,19 @@
 package com.example.studysample_01.data.remote
 
-import com.example.studysample_01.data.model.BookSearchMapper
+import android.util.Log
+import com.example.studysample_01.data.BookRemoteDataSource
 import com.example.studysample_01.domain.BookSearchRepository
-import com.example.studysample_01.domain.SearchBookEntity
-import com.example.studysample_01.utils.ServiceApi
+import com.example.studysample_01.domain.entity.BookSearchEntity
+import com.example.studysample_01.utils.Result
 import javax.inject.Inject
 
 class BookSearchRepositoryImpl @Inject constructor(
-    private val serviceApi: ServiceApi
+    private val remoteDataSource: BookRemoteDataSource
 ) : BookSearchRepository {
 
-    override suspend fun getBookList(keyword: String): SearchBookEntity {
+    override suspend fun getBookList(keyword: String): Result<BookSearchEntity> {
 
-        return BookSearchMapper.fromModelEntity(serviceApi.getSearchBook(keyword))
+        return remoteDataSource.getBookInfo(keyword)
     }
 
 }
